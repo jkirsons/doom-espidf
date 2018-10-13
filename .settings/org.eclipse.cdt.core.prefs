@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/BATCH_BUILD/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/BATCH_BUILD/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/BATCH_BUILD/value=1
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/IDF_PATH/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/IDF_PATH/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/IDF_PATH/value=C\:\\msys32\\home\\Jason\\esp\\esp-idf
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/PATH/delimiter=;
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/PATH/operation=replace
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/PATH/value=C\:\\msys32\\usr\\bin;C\:\\msys32\\mingw32\\bin;C\:\\msys32\\opt\\xtensa-esp32-elf\\bin
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cygwin.base.101218501/appendContributed=true
