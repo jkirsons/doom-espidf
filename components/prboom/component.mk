@@ -10,5 +10,8 @@
 #include $(IDF_PATH)/make/component_common.mk
 
 
+
+
 CFLAGS += -Wno-error=char-subscripts -Wno-error=unused-value -Wno-error=parentheses -Wno-error=int-to-pointer-cast -Wno-pointer-sign \
-		-Wno-error=unused-but-set-parameter -Wno-error=maybe-uninitialized
+		-Wno-error=unused-but-set-parameter -Wno-error=maybe-uninitialized -Wno-error=unused-const-variable -Wno-error=misleading-indentation \
+		-Wno-error=nonnull -Wno-error=dangling-else -Wno-error=format-overflow -Wno-error=duplicate-decl-specifier -Wno-error=sizeof-pointer-div

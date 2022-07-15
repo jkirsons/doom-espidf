@@ -24,6 +24,7 @@
 #include "esp_heap_caps.h"
 
 #include "sdkconfig.h"
+#include "freertos/semphr.h"
 
 
 #if 0
