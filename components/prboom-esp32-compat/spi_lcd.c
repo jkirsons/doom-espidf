@@ -216,9 +216,9 @@ void ili_init(spi_device_handle_t spi)
 
     ///Enable backlight
 #if CONFIG_HW_INV_BL
-    //gpio_set_level(PIN_NUM_BCKL, 0);
+    gpio_set_level(PIN_NUM_BCKL, 0);
 #else
-    //gpio_set_level(PIN_NUM_BCKL, 1);
+    gpio_set_level(PIN_NUM_BCKL, 1);
 #endif
 
 }
