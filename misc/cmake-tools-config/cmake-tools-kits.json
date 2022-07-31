@@ -1,0 +1,10 @@
+[
+    {
+      "name": "esp32",
+      "compilers": {
+        "C": "/home/v/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc",
+        "CXX": "/home/v/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++",
+        "ASM": "/home/v/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc"
+      }
+    }
+  ]

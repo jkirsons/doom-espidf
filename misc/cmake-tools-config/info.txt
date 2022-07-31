@@ -1,0 +1,8 @@
+Add this json array element to your:
+~/.local/share/CMakeTools/cmake-tools-kits.json
+in order to loet CmakeTools extenstion use cmake as a configurationProvider in vscode
+This allows for better code jumping within vscode.
+It also lets you compile your project with this extenstion.
+
+It's also possible to use the View -> ShowCmake command
+in order to see the graphical representation of the build.

@@ -2,6 +2,7 @@
     "configurations": [
         {
             "name": "ESP-IDF",
+            "configurationProvider": "ms-vscode.cmake-tools",
             "compilerPath": "/home/v/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
