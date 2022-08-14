@@ -46,6 +46,9 @@
 uint8_t levels_b[] = {0, 10, 20, 31};
 uint8_t levels_g[] = {0, 9, 18, 27, 36, 45, 54, 63};
 uint8_t levels_r[] = {0, 4,  8, 12, 16, 20, 24, 31};
+
+// TODO: get rid of this extern as the size may change on the other side.
+extern int16_t lcdpal[256];
 // end move it to lcd_test.c
 
 extern void jsInit();
