@@ -27,23 +27,17 @@
 #include "freertos/semphr.h"
 
 
-#if 0
-#define PIN_NUM_MISO 25
-#define PIN_NUM_MOSI 23
-#define PIN_NUM_CLK  19
-#define PIN_NUM_CS   22
-#define PIN_NUM_DC   21
-#define PIN_NUM_RST  18
-#define PIN_NUM_BCKL 5
-#else
-#define PIN_NUM_MOSI CONFIG_HW_LCD_MOSI_GPIO
-#define PIN_NUM_MISO CONFIG_HW_LCD_MISO_GPIO
-#define PIN_NUM_CLK  CONFIG_HW_LCD_CLK_GPIO
-#define PIN_NUM_CS   CONFIG_HW_LCD_CS_GPIO
-#define PIN_NUM_DC   CONFIG_HW_LCD_DC_GPIO
-#define PIN_NUM_RST  CONFIG_HW_LCD_RESET_GPIO
-#define PIN_NUM_BCKL CONFIG_HW_LCD_BL_GPIO
-#endif
+/* config */
+#define HW_INV_BL       CONFIG_HW_INV_BL_CUST
+
+#define PIN_NUM_MOSI    CONFIG_HW_LCD_MOSI_GPIO
+#define PIN_NUM_MISO    CONFIG_HW_LCD_MISO_GPIO
+#define PIN_NUM_CLK     CONFIG_HW_LCD_CLK_GPIO
+#define PIN_NUM_CS      CONFIG_HW_LCD_CS_GPIO
+#define PIN_NUM_DC      CONFIG_HW_LCD_DC_GPIO
+#define PIN_NUM_RST     CONFIG_HW_LCD_RESET_GPIO
+#define PIN_NUM_BCKL    CONFIG_HW_LCD_BL_GPIO
+/* end config */
 
 //You want this, especially at higher framerates. The 2nd buffer is allocated in iram anyway, so isn't really in the way.
 #define DOUBLE_BUFFER
@@ -215,7 +209,7 @@ void ili_init(spi_device_handle_t spi)
     }
 
     ///Enable backlight
-#if CONFIG_HW_INV_BL
+#if HW_INV_BL
     gpio_set_level(PIN_NUM_BCKL, 0);
 #else
     gpio_set_level(PIN_NUM_BCKL, 1);
