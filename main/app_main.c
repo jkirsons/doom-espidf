@@ -13,7 +13,7 @@
 // limitations under the License.
 
 /* CONFIG */
-#define LCD_TEST
+// #define LCD_TEST
 
 #include "esp_attr.h"
 
