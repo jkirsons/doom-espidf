@@ -96,7 +96,7 @@
 
 #include <sys/time.h>
 
-#define MODE_SPI 1
+#define MODE_SPI 0
 #define PIN_NUM_MISO 2 //4
 #define PIN_NUM_MOSI 13
 #define PIN_NUM_CLK  14
