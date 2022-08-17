@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "~/esp/esp-idf"
+		}
+	],
+	"settings": {}
+}

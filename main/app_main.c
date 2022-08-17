@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/* CONFIG */
+// #define LCD_TEST
+
 #include "esp_attr.h"
 
 #include "rom/cache.h"
@@ -29,13 +32,24 @@
 #include "freertos/task.h"
 #include <stdlib.h>
 #include "esp_err.h"
+#include <stdint.h>
 //#include "nvs_flash.h"
 //#include "esp_partition.h"
 
 //#include "i_system.h"
 
-//#include "spi_lcd.h"
+#include "spi_lcd.h"
+#include "i_video.h"
+#include "lcd_test.h"
 
+// TODO: move it to lcd_test.c
+uint8_t levels_b[] = {0, 10, 20, 31};
+uint8_t levels_g[] = {0, 9, 18, 27, 36, 45, 54, 63};
+uint8_t levels_r[] = {0, 4,  8, 12, 16, 20, 24, 31};
+
+// TODO: get rid of this extern as the size may change on the other side.
+extern int16_t lcdpal[256];
+// end move it to lcd_test.c
 
 extern void jsInit();
 extern int doom_main(int argc, char const * const *argv);
@@ -51,5 +65,22 @@ void app_main()
 {
 	spi_lcd_init();
 	jsInit();
-	xTaskCreatePinnedToCore(&doomEngineTask, "doomEngine", 18000, NULL, 5, NULL, 0);
+
+	#ifdef LCD_TEST
+		// TODO: move it to lcd_test.c
+		for (size_t pal_id=0u; pal_id<sizeof(lcdpal); ++pal_id)
+		{
+			/* create simple palette mapping RGB332 to RGB565 */
+			int16_t val = ( levels_r[(pal_id & 0xE0)>>5] << 11) | (levels_g[(pal_id & 0x1C)>>2]<<5) | (levels_b[(pal_id & 0x3)]);
+			lcdpal[pal_id] = ((val & 0xFF) << 8) | ((val & 0xFF00) >> 8);
+		}
+		// end move it to lcd_test.c
+
+		updateTestScreen();
+
+		xTaskCreatePinnedToCore(&lcdTestTask, "lcdTestTask", 18000, NULL, 5, NULL, 0);
+	#else // LCD_TEST
+		xTaskCreatePinnedToCore(&doomEngineTask, "doomEngine", 18000, NULL, 5, NULL, 0);
+	#endif // LCD_TEST
+
 }
